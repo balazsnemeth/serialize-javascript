@@ -1,5 +1,5 @@
 {
-  "name": "serialize-javascript",
+  "name": "metabase_serialize-javascript",
   "version": "1.5.0",
   "description": "Serialize JavaScript to a superset of JSON that includes regular expressions and functions.",
   "main": "index.js",
@@ -24,6 +24,10 @@
     "url": "https://github.com/yahoo/serialize-javascript/issues"
   },
   "homepage": "https://github.com/yahoo/serialize-javascript",
+  "dependencies": {
+    "lave": "^1.1.10",
+    "escodegen": "^1.11.0"
+  },
   "devDependencies": {
     "benchmark": "^2.1.4",
     "chai": "^4.1.0",

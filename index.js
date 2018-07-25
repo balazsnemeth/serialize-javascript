@@ -4,6 +4,9 @@ Copyrights licensed under the New BSD License.
 See the accompanying LICENSE file for terms.
 */
 
+const generate = require('escodegen').generate;
+const lave = require('lave');
+
 'use strict';
 
 // Generate an internal UID to make the regexp pattern harder to guess.
@@ -108,7 +111,7 @@ module.exports = function serialize(obj, options) {
         }
 
         var fn           = functions[valueIndex];
-        var serializedFn = fn.toString();
+        var serializedFn = lave(fn, { generate });
 
         if (IS_NATIVE_CODE_REGEXP.test(serializedFn)) {
             throw new TypeError('Serializing native function: ' + fn.name);
@@ -116,4 +119,4 @@ module.exports = function serialize(obj, options) {
 
         return serializedFn;
     });
-}
+};
